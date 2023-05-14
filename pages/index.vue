@@ -1,6 +1,6 @@
 <template>
   <h1>Nuxt3 Jamstack Blogs</h1>
-  <ul>
+  <ul class="container">
     <li v-for="blog in data?.contents" :key="blog.id">
       <NuxtLink :to="`/${blog.id}`">
         <img :src="blog.eyecatch?.url" :width="blog.eyecatch?.width" :height="blog.eyecatch?.height" alt="" />
@@ -27,3 +27,9 @@ const { data } = await useMicroCMSGetList<Blog>({
   endpoint: "blogs",
 });
 </script>
+
+<style lang="scss">
+.container {
+  background-color: bisque;
+}
+</style>

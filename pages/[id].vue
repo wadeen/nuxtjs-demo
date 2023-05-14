@@ -25,5 +25,4 @@ const { data } = await useMicroCMSGetListDetail<Blog>({
   endpoint: "blogs",
   contentId: Array.isArray(params.id) ? params.id[0] : params.id,
 });
-console.log(data);
 </script>
