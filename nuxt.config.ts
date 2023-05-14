@@ -8,4 +8,5 @@ export default defineNuxtConfig({
     apiKey: process.env.MICROCMS_API_KEY,
     target: "server",
   },
+  // ssr: true,
 });
