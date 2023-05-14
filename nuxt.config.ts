@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // cssなどの設定を書く（型安全・自動補完目的）
 export default defineNuxtConfig({
-  css: ["~/src/styles/global.css"],
+  css: ["~/styles/global.css"],
   modules: [
     [
       "nuxt-microcms-module",
