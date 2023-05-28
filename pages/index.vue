@@ -2,15 +2,15 @@
   <h1>Nuxt3 Jamstack Blogs</h1>
   <ul class="container">
     <li v-for="blog in data?.contents" :key="blog.id">
-      <NuxtLink :to="`/${blog.id}`">
+      <NuxtLink :to="`/posts/${blog.id}`">
         <img :src="blog.eyecatch?.url" :width="blog.eyecatch?.width" :height="blog.eyecatch?.height" alt="" />
         <div>
           <div>
             {{ blog.category?.name }}
           </div>
-          <div>
+          <h1 v-if="blog && blog.title">
             {{ blog.title }}
-          </div>
+          </h1>
           <div>
             {{ blog.publishedAt ?? blog.createdAt }}
           </div>
@@ -21,10 +21,14 @@
 </template>
 
 <script setup lang="ts">
-import { Blog } from "~/types/blog";
+import { Blog } from "~/types/microcms";
 
 const { data } = await useMicroCMSGetList<Blog>({
   endpoint: "blogs",
+  queries: {
+    limit: 10,
+    // filters: "title[contains]サンプル",
+  },
 });
 </script>
 

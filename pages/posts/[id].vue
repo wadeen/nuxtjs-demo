@@ -17,16 +17,22 @@
 </template>
 
 <script setup lang="ts">
-import { Blog } from "~~/types/blog";
+import { Blog } from "~/types/microcms.js";
 
-const { params } = useRoute();
+const { params } = useRoute(); // [id]データ
+
+console.log("params: ", params);
 
 // 他の例：
-const router = useRouter();
-console.log("router: ", router);
+// const router = useRouter();
 
+// 詳細データ
 const { data } = await useMicroCMSGetListDetail<Blog>({
   endpoint: "blogs",
   contentId: Array.isArray(params.id) ? params.id[0] : params.id,
 });
+// const { data } = await useMicroCMSGetListDetail<Blog>({
+//   endpoint: "blogs",
+//   contentId: Array.isArray(params.id) ? params.id[0] : params.id,
+// });
 </script>

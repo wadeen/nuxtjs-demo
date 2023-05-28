@@ -10,7 +10,7 @@
 }
 </style>
 
-<script>
+<script setup>
 // This will work in both `<script setup>` and `<script>`
 definePageMeta({
   layout: "custom2", // default or customNameで指定も可能

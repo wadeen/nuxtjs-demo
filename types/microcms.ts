@@ -7,3 +7,5 @@ export type Blog = {
   eyecatch?: MicroCMSImage;
   category: (MicroCMSListContent & Category) | null;
 };
+
+// export type BlogCategory = {...}
