@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>レイアウトです。</p>
+    <nav>カスタム1️⃣のレイアウト</nav>
     <slot />
   </div>
 </template>

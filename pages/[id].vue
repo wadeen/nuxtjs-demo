@@ -21,6 +21,10 @@ import { Blog } from "~~/types/blog";
 
 const { params } = useRoute();
 
+// 他の例：
+const router = useRouter();
+console.log("router: ", router);
+
 const { data } = await useMicroCMSGetListDetail<Blog>({
   endpoint: "blogs",
   contentId: Array.isArray(params.id) ? params.id[0] : params.id,
